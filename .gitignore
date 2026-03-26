@@ -1,0 +1,10 @@
+# Ignore Terraform local state and variables
+.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
+*.tfvars
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
