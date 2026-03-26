@@ -25,12 +25,9 @@ resource "fortios_firewall_policy" "lan_to_internet" {
     name = "ALL" # Built-in FortiOS object for all ports/protocols
   }
 
-  # Security Profiles (Assuming default profiles exist in v7.0.5)
-  utm_status = "enable"
-  ssl_ssh_profile {
-    name = "certificate-inspection"
-  }
-  av_profile {
-    name = "default"
-  }
+  # ADD THIS CORRECTED FORMAT:
+  utm_status      = "enable"
+  profile_type    = "single"                   # Tells FortiOS we are assigning individual profiles
+  ssl_ssh_profile = "certificate-inspection"   # Argument format (String)
+  av_profile      = "default"                  # Argument format (String)
 }
